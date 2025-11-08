@@ -4,85 +4,107 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form page</title>
+    <title>Form Page - Web Systems Programming</title>
+    <meta name="description" content="Form page of the Web Systems Programming course website with examples of text fields, dropdowns, radio buttons, checkboxes, and textarea.">
+    <meta name="keywords" content="Web, HTML5, forms, text fields, dropdown, radio buttons, checkboxes, textarea, WSP, Alexandra Smirnova">
   </head>
 
   <body>
     <header>
       <nav class="navbar">
         <a class="nav-link" href="index.html">Main page</a>
-        <a class="nav-link" href="text.html">1.Text</a>
-        <a class="nav-link" href="graphics.html">2.Graphics</a>
-        <a class="nav-link" href="lists.html">3.Lists(bullets)</a>
-        <a class="nav-link" href="tables.html">4.Tables (with headers, body and footer)</a>
-        <a class="nav-link" href="references.html">5.References (links)</a>
-        <a class="nav-link" href="form.html">6.Form</a>
+        <a class="nav-link" href="text.html">1. Text</a>
+        <a class="nav-link" href="graphics.html">2. Graphics</a>
+        <a class="nav-link" href="lists.html">3. Lists (bullets)</a>
+        <a class="nav-link" href="tables.html">4. Tables</a>
+        <a class="nav-link" href="references.html">5. References</a>
+        <a class="nav-link" href="form.html">6. Form</a>
         <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50">
       </nav>
-      <h1>Welcome to the Form page</h1>
+      <h1>Welcome to the Form Page</h1>
     </header>
 
     <main>
-      <section>
-        <h2>Form</h2>
-        <form action="#" method="post">
-          <!-- a. several text fields -->
-          <label for="firstname">First name:</label><br>
-          <input type="text" id="firstname" name="firstname"><br><br>
+      <article>
+        <section>
+          <h2>Form Example</h2>
+          <form action="#" method="post">
+            <!-- a. several text fields -->
+            <label for="firstname">First name:</label><br>
+            <input type="text" id="firstname" name="firstname"><br><br>
 
-          <label for="lastname">Last name:</label><br>
-          <input type="text" id="lastname" name="lastname"><br><br>
+            <label for="lastname">Last name:</label><br>
+            <input type="text" id="lastname" name="lastname"><br><br>
 
-          <label for="email">Email:</label><br>
-          <input type="text" id="email" name="email"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br><br>
 
-          <!-- b. drop-down list with grouped options -->
-          <label for="country">Select your country:</label><br>
-          <select id="country" name="country">
-            <optgroup label="Europe">
-              <option value="portugal">Portugal</option>
-              <option value="spain">Spain</option>
-              <option value="france">France</option>
-            </optgroup>
-            <optgroup label="Asia">
-              <option value="japan">Japan</option>
-              <option value="china">China</option>
-              <option value="india">India</option>
-            </optgroup>
-          </select>
-          <br><br>
+            <!-- b. drop-down list with grouped options -->
+            <label for="country">Select your country:</label><br>
+            <select id="country" name="country">
+              <optgroup label="Europe">
+                <option value="portugal">Portugal</option>
+                <option value="spain">Spain</option>
+                <option value="france">France</option>
+              </optgroup>
+              <optgroup label="Asia">
+                <option value="japan">Japan</option>
+                <option value="china">China</option>
+                <option value="india">India</option>
+              </optgroup>
+            </select>
+            <br><br>
 
-          <!-- c. single-select items (radio) -->
-          <p>Gender:</p>
-          <input type="radio" id="male" name="gender" value="male">
-          <label for="male">Male</label><br>
-          <input type="radio" id="female" name="gender" value="female">
-          <label for="female">Female</label><br>
-          <input type="radio" id="other" name="gender" value="other">
-          <label for="other">Other</label><br><br>
+            <!-- c. single-select items (radio) -->
+            <p>Gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
 
-          <!-- d. multiple-selection items (checkbox) -->
-          <p>Hobbies:</p>
-          <input type="checkbox" id="reading" name="hobbies" value="reading">
-          <label for="reading">Reading</label><br>
-          <input type="checkbox" id="travel" name="hobbies" value="travel">
-          <label for="travel">Travel</label><br>
-          <input type="checkbox" id="sports" name="hobbies" value="sports">
-          <label for="sports">Sports</label><br><br>
+            <!-- d. multiple-selection items (checkbox) -->
+            <p>Hobbies:</p>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="travel" name="hobbies" value="travel">
+            <label for="travel">Travel</label><br>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Sports</label><br><br>
 
-          <!-- e. text area (max 200 characters) -->
-          <label for="comments">Comments (max 200 characters):</label><br>
-          <textarea id="comments" name="comments" maxlength="200" rows="4" cols="50"></textarea><br><br>
+            <!-- e. text area (max 200 characters) -->
+            <label for="comments">Comments (max 200 characters):</label><br>
+            <textarea id="comments" name="comments" maxlength="200" rows="4" cols="50"></textarea><br><br>
 
-          <!-- f. buttons -->
-          <button type="reset">Clear</button>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+            <!-- f. buttons -->
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+          </form>
+
+          <details>
+            <summary>Form Tips</summary>
+            <ul>
+              <li>Use labels with <code>for</code> attributes for accessibility.</li>
+              <li>Group related inputs with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> if needed.</li>
+              <li>Validate input types and lengths appropriately.</li>
+            </ul>
+          </details>
+
+          <p>Progress through form examples:</p>
+          <meter value="6" min="0" max="6">Step 6 of 6</meter>
+        </section>
+      </article>
+
+      <aside>
+        <h3>Quick Info</h3>
+        <p>This page demonstrates various form elements including text fields, dropdowns, radio buttons, checkboxes, textarea, and buttons.</p>
+      </aside>
     </main>
 
     <footer>
       <p>&copy; 2025 Alexandra Smirnova</p>
+      <p>Last updated: <time datetime="2025-11-08">November 8, 2025</time></p>
     </footer>
   </body>
 </html>
