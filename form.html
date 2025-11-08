@@ -1,110 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form Page - Web Systems Programming</title>
-    <meta name="description" content="Form page of the Web Systems Programming course website with examples of text fields, dropdowns, radio buttons, checkboxes, and textarea.">
-    <meta name="keywords" content="Web, HTML5, forms, text fields, dropdown, radio buttons, checkboxes, textarea, WSP, Alexandra Smirnova">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personal Form Page - Web Systems Programming</title>
+  <meta name="description" content="Form page with various input types, validation, autocomplete, placeholders, slider, color picker, checkboxes, radio buttons, and more.">
+  <meta name="keywords" content="Web, HTML5, form, personal info, validation, slider, color picker, checkboxes, radio buttons, datalist, autocomplete, WSP, Alexandra Smirnova">
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <a class="nav-link" href="index.html">Main page</a>
+    <a class="nav-link" href="text.html">1. Text</a>
+    <a class="nav-link" href="graphics.html">2. Graphics</a>
+    <a class="nav-link" href="lists.html">3. Lists</a>
+    <a class="nav-link" href="tables.html">4. Tables</a>
+    <a class="nav-link" href="references.html">5. References</a>
+    <a class="nav-link" href="form.html">6. Form</a>
+    <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50">
+  </nav>
+  <h1>Personal Information Form</h1>
+</header>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <a class="nav-link" href="index.html">Main page</a>
-        <a class="nav-link" href="text.html">1. Text</a>
-        <a class="nav-link" href="graphics.html">2. Graphics</a>
-        <a class="nav-link" href="lists.html">3. Lists (bullets)</a>
-        <a class="nav-link" href="tables.html">4. Tables</a>
-        <a class="nav-link" href="references.html">5. References</a>
-        <a class="nav-link" href="form.html">6. Form</a>
-        <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50">
-      </nav>
-      <h1>Welcome to the Form Page</h1>
-    </header>
+<main>
+  <article>
+    <section>
+      <form action="#" method="post" autocomplete="on">
+        <h2>Fill in your details:</h2>
 
-    <main>
-      <article>
-        <section>
-          <h2>Form Example</h2>
-          <form action="#" method="post">
-            <!-- a. several text fields -->
-            <label for="firstname">First name:</label><br>
-            <input type="text" id="firstname" name="firstname"><br><br>
+        <!-- a. Name -->
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Your first name" autofocus autocomplete="given-name"><br><br>
 
-            <label for="lastname">Last name:</label><br>
-            <input type="text" id="lastname" name="lastname"><br><br>
+        <!-- b. Last Name (required) -->
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Your last name" required autocomplete="family-name"><br><br>
 
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br><br>
+        <!-- c. Month of birth using datalist -->
+        <label for="month">Month of Birth:</label>
+        <input list="months" id="month" name="month" placeholder="Select month">
+        <datalist id="months">
+          <option value="January">
+          <option value="February">
+          <option value="March">
+          <option value="April">
+          <option value="May">
+          <option value="June">
+          <option value="July">
+          <option value="August">
+          <option value="September">
+          <option value="October">
+          <option value="November">
+          <option value="December">
+        </datalist><br><br>
 
-            <!-- b. drop-down list with grouped options -->
-            <label for="country">Select your country:</label><br>
-            <select id="country" name="country">
-              <optgroup label="Europe">
-                <option value="portugal">Portugal</option>
-                <option value="spain">Spain</option>
-                <option value="france">France</option>
-              </optgroup>
-              <optgroup label="Asia">
-                <option value="japan">Japan</option>
-                <option value="china">China</option>
-                <option value="india">India</option>
-              </optgroup>
-            </select>
-            <br><br>
+        <!-- d. Email (required, validated) -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email"><br><br>
 
-            <!-- c. single-select items (radio) -->
-            <p>Gender:</p>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label><br><br>
+        <!-- e. Telephone (validated using pattern) -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+351 912345678" pattern="^\+?[0-9]{2,3}\s?[0-9]{6,9}$" autocomplete="tel"><br><br>
 
-            <!-- d. multiple-selection items (checkbox) -->
-            <p>Hobbies:</p>
-            <input type="checkbox" id="reading" name="hobbies" value="reading">
-            <label for="reading">Reading</label><br>
-            <input type="checkbox" id="travel" name="hobbies" value="travel">
-            <label for="travel">Travel</label><br>
-            <input type="checkbox" id="sports" name="hobbies" value="sports">
-            <label for="sports">Sports</label><br><br>
+        <!-- f. Date of arriving -->
+        <label for="arrival">Date of Arriving:</label>
+        <input type="date" id="arrival" name="arrival"><br><br>
 
-            <!-- e. text area (max 200 characters) -->
-            <label for="comments">Comments (max 200 characters):</label><br>
-            <textarea id="comments" name="comments" maxlength="200" rows="4" cols="50"></textarea><br><br>
+        <!-- g. Favorite color -->
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
 
-            <!-- f. buttons -->
-            <button type="reset">Clear</button>
-            <button type="submit">Submit</button>
-          </form>
+        <!-- h. Happiness level slider -->
+        <label for="happiness">Happiness Level:</label>
+        <input type="range" id="happiness" name="happiness" min="0" max="10" value="5"><br><br>
 
-          <details>
-            <summary>Form Tips</summary>
-            <ul>
-              <li>Use labels with <code>for</code> attributes for accessibility.</li>
-              <li>Group related inputs with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> if needed.</li>
-              <li>Validate input types and lengths appropriately.</li>
-            </ul>
-          </details>
+        <!-- i. Known languages (checkboxes) -->
+        <p>Known Languages:</p>
+        <input type="checkbox" id="english" name="languages" value="English">
+        <label for="english">English</label>
+        <input type="checkbox" id="spanish" name="languages" value="Spanish">
+        <label for="spanish">Spanish</label>
+        <input type="checkbox" id="french" name="languages" value="French">
+        <label for="french">French</label><br><br>
 
-          <p>Progress through form examples:</p>
-          <meter value="6" min="0" max="6">Step 6 of 6</meter>
-        </section>
-      </article>
+        <!-- j. Education level (radio buttons) -->
+        <p>Education Level:</p>
+        <input type="radio" id="highschool" name="education" value="High School">
+        <label for="highschool">High School</label>
+        <input type="radio" id="bachelor" name="education" value="Bachelor">
+        <label for="bachelor">Bachelor</label>
+        <input type="radio" id="master" name="education" value="Master">
+        <label for="master">Master</label>
+        <input type="radio" id="phd" name="education" value="PhD">
+        <label for="phd">PhD</label><br><br>
 
-      <aside>
-        <h3>Quick Info</h3>
-        <p>This page demonstrates various form elements including text fields, dropdowns, radio buttons, checkboxes, textarea, and buttons.</p>
-      </aside>
-    </main>
+        <!-- k. URL -->
+        <label for="website">Personal Webpage:</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url"><br><br>
 
-    <footer>
-      <p>&copy; 2025 Alexandra Smirnova</p>
-      <p>Last updated: <time datetime="2025-11-08">November 8, 2025</time></p>
-    </footer>
-  </body>
+        <!-- l. Additional notes -->
+        <label for="notes">Additional Notes:</label><br>
+        <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Write anything here..."></textarea><br><br>
+
+        <!-- Buttons -->
+        <button type="reset">Clear</button>
+        <button type="submit">Submit</button>
+
+        <!-- Tips for filling form -->
+        <details>
+          <summary>Form Tips</summary>
+          <ul>
+            <li>Required fields are marked and must be filled before submission.</li>
+            <li>Use proper format for email and phone.</li>
+            <li>Autofill and autocomplete are enabled where possible.</li>
+          </ul>
+        </details>
+
+        <p>Progress through form examples:</p>
+        <meter value="6" min="0" max="6">Step 6 of 6</meter>
+      </form>
+    </section>
+  </article>
+
+  <aside>
+    <h3>Quick Info</h3>
+    <p>This form demonstrates 10+ different input types with validation, placeholders, autocomplete, and accessibility features.</p>
+  </aside>
+</main>
+
+<footer>
+  <p>&copy; 2025 Alexandra Smirnova</p>
+  <p>Last updated: <time datetime="2025-11-08">November 8, 2025</time></p>
+</footer>
+</body>
 </html>
